@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { HeroesComponent } from './heroes.component'
+import { HeroComponent } from './hero/hero.component'
+import { ListComponent } from './list/list.component'
+
+const routes: Routes = [
+	{
+		path: '',
+		redirectTo: 'hero',
+		pathMatch: 'full'
+	},
+	{
+		path: '',
+		component: HeroesComponent,
+		children: [
+			{
+				path: 'hero',
+				component: HeroComponent
+			},
+			{
+				path: 'list',
+				component: ListComponent
+			}
+		]
+	}
+]
+
+@NgModule({
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
+})
+export class HeroesRoutingModule {}

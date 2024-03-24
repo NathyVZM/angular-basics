@@ -1,0 +1,26 @@
+<h2>{{ name }}</h2>
+
+<dl>
+	<dt>Name</dt>
+	<dd>{{ name }}</dd>
+
+	<dt>Age</dt>
+	<dd>{{ age }}</dd>
+
+	<dt>Description</dt>
+	<dd>{{ getDescription }}</dd>
+
+	<dt>Capitalized</dt>
+	<dd>{{ name | titlecase }}</dd>
+</dl>
+
+@if (showNameButton) {
+	<button (click)="changeName('psylocke')">Change name</button>
+}
+@if (showAgeButton) {
+	<button (click)="changeAge(25)">Change age</button>
+}
+
+<button (click)="reset()">Reset</button>
+
+<!-- Valores falsos - false, 0, negativos, null, undefined -->
