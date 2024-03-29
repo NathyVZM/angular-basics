@@ -17,3 +17,6 @@ import { ListComponent } from './list/list.component'
 	imports: [CommonModule, HeroesRoutingModule]
 })
 export class HeroesModule {}
+
+// git checkout -- .
+// Reestablece el codigo al ultimo commit
