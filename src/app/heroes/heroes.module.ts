@@ -1,21 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
 
-import { HeroesRoutingModule } from './heroes-routing.module';
-import { HeroesComponent } from './heroes.component';
-import { HeroComponent } from './hero/hero.component';
-import { ListComponent } from './list/list.component';
+import { HeroesRoutingModule } from './heroes-routing.module'
+import { HeroesComponent } from './heroes.component'
+import { HeroComponent } from './hero/hero.component'
+import { ListComponent } from './list/list.component'
 
-
+// Ordernar los imports y declaraciones por orden alfabetico
+// Se pueden ordernar con la opcion de VSCode de `Sort lines ascending`
 @NgModule({
-  declarations: [
-    HeroesComponent,
-    HeroComponent,
-    ListComponent
-  ],
-  imports: [
-    CommonModule,
-    HeroesRoutingModule
-  ]
+	declarations: [
+		HeroComponent,
+		HeroesComponent,
+		ListComponent
+	],
+	imports: [CommonModule, HeroesRoutingModule]
 })
-export class HeroesModule { }
+export class HeroesModule {}
