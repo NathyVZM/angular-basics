@@ -1,0 +1,8 @@
+<h4>Add character</h4>
+<form (ngSubmit)="addCharacter()">
+	<input type="text" placeholder="Name" name="name" [(ngModel)]="character.name" />
+	<input type="number" placeholder="Grade" name="grade" [(ngModel)]="character.grade" />
+	<button type="submit">Add</button>
+</form>
+
+<pre>{{ character | json }}</pre>

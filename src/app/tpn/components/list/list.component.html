@@ -1,0 +1,11 @@
+<h4>Listing</h4>
+<ul>
+	@for (character of characters; track index; let index = $index; let isEven = $even; let isOdd = $odd) {
+		<li [ngClass]="{ even: isEven, odd: isOdd }">
+			<span>{{ index + 1 }}. </span>
+			<span>{{ character.name }} - </span>
+			<strong>Grade: </strong>
+			<span>{{ character.grade }}</span>
+		</li>
+	}
+</ul>
