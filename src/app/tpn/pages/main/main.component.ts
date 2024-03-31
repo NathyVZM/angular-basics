@@ -12,4 +12,13 @@ export class MainComponent {
 		{ name: 'Norman', grade: 300 },
 		{ name: 'Ray', grade: 300 }
 	]
+
+	addCharacter(character: Character) {
+		this.characters.push(character)
+	}
+
+	deleteCharacter(index: number) {
+		this.characters.splice(index, 1)
+		console.log(index)
+	}
 }

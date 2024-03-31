@@ -1,2 +1,2 @@
-<tpn-list [characters]="characters" />
-<tpn-add-character />
+<tpn-list [characters]="characters" (onDeleteCharacter)="deleteCharacter($event)" />
+<tpn-add-character (onAddCharacter)="addCharacter($event)" />

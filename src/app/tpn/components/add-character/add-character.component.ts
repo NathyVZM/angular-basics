@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, output } from '@angular/core'
 import { Character } from '../../interfaces'
 
 @Component({
@@ -7,15 +7,14 @@ import { Character } from '../../interfaces'
 	styleUrl: './add-character.component.sass'
 })
 export class AddCharacterComponent {
+	onAddCharacter = output<Character>()
 	character: Character = {
 		name: '',
 		grade: 0
 	}
 
 	addCharacter() {
-		Object.assign(this.character, {
-			name: '',
-			grade: 0
-		})
+		this.onAddCharacter.emit(this.character)
+		this.character = { name: '', grade: 0 }
 	}
 }

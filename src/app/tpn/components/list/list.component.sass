@@ -3,3 +3,31 @@
 
 .odd
     background-color: rgb(235, 235, 235)
+
+ul
+    width: 30%
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+    flex-flow: column wrap
+
+li
+    padding: 10px
+    border-radius: 10px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-flow: row wrap
+
+    > button
+        outline: none
+        border: none
+        background-color: rgb(240, 43, 69)
+        border-radius: 10px
+        color: white
+        padding: 1rem 1.5rem
+        cursor: pointer
+        transition: all 0.3s ease
+
+        &:hover
+            background-color: darken(rgb(240, 43, 69), 10%)
