@@ -1,5 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { Character } from '../../interfaces'
+import { TpnService } from '../../services/tpn.service'
+import { first } from 'rxjs'
 
 @Component({
 	selector: 'app-main',
@@ -7,18 +9,20 @@ import { Character } from '../../interfaces'
 	styleUrl: './main.component.sass'
 })
 export class MainComponent {
-	characters: Character[] = [
-		{ name: 'Emma', grade: 300 },
-		{ name: 'Norman', grade: 300 },
-		{ name: 'Ray', grade: 300 }
-	]
+	private tpnService = inject(TpnService)
+	characters$ = this.tpnService.getCharacters()
 
 	addCharacter(character: Character) {
-		this.characters.push(character)
+		this.tpnService
+			.addCharacter(character)
+			.pipe(first())
+			.subscribe(() => {})
 	}
 
-	deleteCharacter(index: number) {
-		this.characters.splice(index, 1)
-		console.log(index)
+	deleteCharacter(id: string) {
+		this.tpnService
+			.deleteCharacter(id)
+			.pipe(first())
+			.subscribe(() => {})
 	}
 }

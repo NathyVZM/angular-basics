@@ -1,5 +1,6 @@
 import { Component, Input, output } from '@angular/core'
 import { Character } from '../../interfaces'
+import { Observable } from 'rxjs'
 
 @Component({
 	selector: 'tpn-list',
@@ -7,10 +8,10 @@ import { Character } from '../../interfaces'
 	styleUrl: './list.component.sass'
 })
 export class ListComponent {
-	@Input() characters: Character[] = []
-	onDeleteCharacter = output<number>()
+	@Input() characters!: Observable<Character[]>
+	onDeleteCharacter = output<string>()
 
-	deleteCharacter(index: number) {
-		this.onDeleteCharacter.emit(index)
+	deleteCharacter(id: string) {
+		this.onDeleteCharacter.emit(id)
 	}
 }

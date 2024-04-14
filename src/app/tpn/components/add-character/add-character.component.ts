@@ -9,12 +9,13 @@ import { Character } from '../../interfaces'
 export class AddCharacterComponent {
 	onAddCharacter = output<Character>()
 	character: Character = {
+		id: '',
 		name: '',
 		grade: 0
 	}
 
 	addCharacter() {
 		this.onAddCharacter.emit(this.character)
-		this.character = { name: '', grade: 0 }
+		this.character = { id: '', name: '', grade: 0 }
 	}
 }

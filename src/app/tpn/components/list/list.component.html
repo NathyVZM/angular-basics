@@ -1,6 +1,6 @@
 <h4>Listing</h4>
 <ul>
-	@for (character of characters; track index; let index = $index; let isEven = $even; let isOdd = $odd) {
+	@for (character of characters | async; track index; let index = $index; let isEven = $even; let isOdd = $odd) {
 		<li [ngClass]="{ even: isEven, odd: isOdd }">
 			<div>
 				<span>{{ index + 1 }}. {{ character.name }} - </span>
@@ -8,7 +8,7 @@
 				<span>{{ character.grade }}</span>
 			</div>
 
-			<button (click)="deleteCharacter(index)">Delete</button>
+			<button (click)="deleteCharacter(character.id)">Delete</button>
 		</li>
 	}
 </ul>
